@@ -1,0 +1,49 @@
+ <section class="about d-flex justify-content-center">   
+    <div class="layer d-flex justify-content-center align-items-center">
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-6 text-left mx-auto"> 
+                        <h1 class="mt-4 "> {{author.firstName}} {{ author.lastName}} </h1>
+                        <h6 class="username  mb-3">@{{author.userName}}</h6>
+                        <h6 class="date">Email: {{author.email}}</h6>
+                    </div>
+                    <div class="col-md-6 text-center d-flex mx-auto justify-content-evenly align-items-center"> 
+                        <div> 
+                            <h2 class="date">30</h2>
+                            <span>Following</span>
+                        </div>
+                        <div> 
+                            <h2 class="date">32</h2>
+                            <span>Followers</span>
+                        </div>  
+                        <div> 
+                          <h2 class="date">{{postsLength}}</h2>
+                          <span>Posts</span>
+                      </div>   
+                    </div>
+                </div>  
+             </div>
+        
+    </div>
+</section> 
+
+<section class="post-body py-5">
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-9 text-left py-3 mx-auto" *ngFor = "let post of posts; let currentIndex=index"> 
+          <div class="post-item text-left d-flex justify-content-start">
+            <a  class="post-img mx-4" routerLink='/profile/postDetails/{{post._id}}'><img src="{{env.apiUrl}}/{{post.image}}" alt="Image" class="img-fluid"></a>
+            <div class="post-content">
+              <span class="date-span"> {{author.firstName}} {{ author.lastName}} </span>  <span class="date-span">| on {{post.createdAt | date : 'dd-MM-YYYY hh:mm a'}} </span>
+              <h3 class="bold-heading py-1"> {{post.title}}</h3>
+              <p class="text-muted"> {{post.postBody  | maxLength : 120 }} </p>
+              <span class="tag text-muted p-1 me-2" *ngFor="let postTag of post.tags;"> #{{postTag}}</span> 
+
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section> 
+

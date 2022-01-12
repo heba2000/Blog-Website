@@ -1,0 +1,36 @@
+.container-fluid{
+    padding: 0px !important;
+}
+.contact {
+    background-image: url(../../../assets/images/9.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: #fff;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.date{
+    font-style: italic;
+    color: #2c98f0 ;
+    font-weight: 600 !important;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 1px solid lightgray;
+    -webkit-appearance: none  !important;
+    padding: 1rem 1rem;
+}
+span{
+    color: #dc3545;
+    font-size: 0.8rem;
+}
+.sign-redirect{
+    font-size: 0.8rem;
+}
+.sign-redirect a{
+    color: #2c98f0;
+    text-decoration: none;
+}

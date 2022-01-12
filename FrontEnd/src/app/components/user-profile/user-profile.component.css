@@ -1,0 +1,36 @@
+.about{
+    background-image: url(../../../assets/images/8.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    position: relative;
+    color: #fff;
+}
+.post-img img{
+    width: 66vh;
+}
+.date-span {
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    color: #2c98f0;
+    font-weight: 600;
+  }
+.post-content p , h6 {
+    font-size: 0.9rem;
+}
+.bold-heading{
+    font-weight: 700;
+}
+.username{
+    color: rgba(255, 255, 255, 0.767);
+    font-weight: 500;
+}
+.tag{
+    background-color: #2c98f042;
+    font-size: 0.8rem;
+    border-radius: 2px;
+}
+.date-span i {
+    cursor: pointer;
+}

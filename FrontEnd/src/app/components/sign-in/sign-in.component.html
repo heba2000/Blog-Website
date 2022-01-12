@@ -1,0 +1,33 @@
+<section> 
+    <div class="container-fluid">
+      <div class="row g-0">
+          <div class="col-lg-7 col-md-6">
+            <div class="contact d-none d-md-block d-lg-block">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6 d-flex align-items-center justify-content-center">
+              <div class="w-75" [formGroup]="signInForm" *ngIf="signInForm">
+                <h4 class="text-center">Sign In Now!</h4>
+
+                    <div class="my-3">
+                      <input type="text" class="form-control"  placeholder="userName" formControlName="userName" [class.is-invalid]="signInForm.controls['userName'].errors && signInForm.controls['userName'].touched">
+                      <span *ngIf="signInForm.controls['userName'].errors?.['required'] && signInForm.controls['userName'].touched">userName is required </span>
+                    </div>
+
+                    <div class="my-3">
+                      <input type="password" class="form-control"  placeholder="Password" formControlName="password" [class.is-invalid]="signInForm.controls['password'].errors && signInForm.controls['password'].touched">
+                      <span *ngIf="signInForm.controls['password'].errors?.['required'] && signInForm.controls['password'].touched">Password is required </span>
+                      <span *ngIf="signInForm.controls['password'].errors?.['minlength']">Password is too short </span>
+                      <span *ngIf="signInForm.controls['password'].errors?.['maxlength']">Password can't be more than 15 characters </span>
+                    </div>
+
+                    <div class="button py-2 d-flex justify-content-center">
+                      <button class="btn btn-primary btn-lg w-100 py-2" type="button" [disabled]="signInForm.invalid" (click)="signInUser()">Sign In</button>
+                  </div>
+                  <p class="sign-redirect text-center">Don't have an account? <a (click)="redirectToSignUp()"> Sign Up </a></p>
+              </div>
+
+        </div>
+      </div>  
+    </div>
+</section>

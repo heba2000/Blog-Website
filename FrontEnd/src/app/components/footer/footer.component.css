@@ -1,0 +1,11 @@
+.home-social li
+{
+  list-style: none;
+  background-color: #2c98f0;
+  border-radius: 50% ;
+  height: 50px !important;
+  width: 50px !important;
+}
+.home-social li i{
+  color: #fff;
+}

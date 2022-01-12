@@ -1,0 +1,55 @@
+<section> 
+    <div class="container-fluid">
+      <div class="row g-0">
+          <div class="col-lg-7 col-md-6">
+            <div class="contact d-none d-md-block d-lg-block">
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6 d-flex align-items-center justify-content-center">
+              <div class="w-75" [formGroup]="signUpForm" *ngIf="signUpForm">
+                <h4 class="text-center">Sign Up to Get Started</h4>
+                  <div class="my-3">
+                      <input type="text" class="form-control"  placeholder="First Name" formControlName="firstName" [class.is-invalid]="signUpForm.controls['firstName'].errors && signUpForm.controls['firstName'].touched">
+                      <span *ngIf="signUpForm.controls['firstName'].errors?.['required'] && signUpForm.controls['firstName'].touched">First Name is required </span>
+                      <span *ngIf="signUpForm.controls['firstName'].errors?.['minlength']">First Name should be at least 3 letters </span>
+                      <span *ngIf="signUpForm.controls['firstName'].errors?.['maxlength']">First Name can't be more than 12 letters </span>
+                      <span *ngIf="signUpForm.controls['firstName'].errors?.['pattern']">Name can't include numbers </span>
+                  
+
+                    </div>
+                    <div class="my-3">
+                      <input type="text" class="form-control"  placeholder="Last Name" formControlName="lastName" [class.is-invalid]="signUpForm.controls['lastName'].errors && signUpForm.controls['lastName'].touched">
+                      <span *ngIf="signUpForm.controls['lastName'].errors?.['required'] && signUpForm.controls['lastName'].touched">Last Name is required </span>
+                      <span *ngIf="signUpForm.controls['lastName'].errors?.['minlength']">Last Name should be at least 3 letters </span>
+                      <span *ngIf="signUpForm.controls['lastName'].errors?.['maxlength']">Last Name can't be more than 10 letters </span>
+                      <span *ngIf="signUpForm.controls['lastName'].errors?.['pattern']">Name can't include numbers </span>
+                  
+                    </div>
+                    <div class="my-3">
+                      <input type="text" class="form-control"  placeholder="userName" formControlName="userName" [class.is-invalid]="signUpForm.controls['userName'].errors && signUpForm.controls['userName'].touched">
+                      <span *ngIf="signUpForm.controls['userName'].errors?.['required'] && signUpForm.controls['userName'].touched">userName is required </span>
+                  
+                    </div>
+                    <div class="my-3">
+                      <input type="email" class="form-control"  placeholder="@email.example" formControlName="email" [class.is-invalid]="signUpForm.controls['email'].errors && signUpForm.controls['email'].touched">
+                      <span *ngIf="signUpForm.controls['email'].errors?.['required'] && signUpForm.controls['email'].touched">Email is required </span>
+                      <span *ngIf="signUpForm.controls['email'].errors?.['pattern']">Email is is-invalid </span>
+                  
+                    </div>
+                    <div class="my-3">
+                      <input type="password" class="form-control"  placeholder="Password" formControlName="password" [class.is-invalid]="signUpForm.controls['password'].errors && signUpForm.controls['password'].touched">
+                      <span *ngIf="signUpForm.controls['password'].errors?.['required'] && signUpForm.controls['password'].touched">Password is required </span>
+                      <span *ngIf="signUpForm.controls['password'].errors?.['minlength']">Password is too short </span>
+                      <span *ngIf="signUpForm.controls['password'].errors?.['maxlength']">Password can't be more than 15 characters </span>
+                  
+                    </div>
+                    <div class="button py-2 d-flex justify-content-center">
+                      <button class="btn btn-primary btn-lg w-100 py-2" type="button" [disabled]="signUpForm.invalid" (click)="registerNewUser()" >Sign Up</button>
+                  </div>
+                  <p class="sign-redirect text-center">Already have account? <a  (click)="redirectToSignIn()"> Sign In </a></p>
+              </div>
+
+        </div>
+      </div>  
+    </div>
+</section>

@@ -1,0 +1,33 @@
+  .navbar-light .navbar-toggler{
+  border-color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  }
+  .nav-link{
+    color: rgb(168, 167, 167) !important;
+    font-weight: 400;
+  }
+  .nav-link:hover{
+    color: #2c98f0 !important;
+  }
+  .fixed-top.scrolled {
+    box-shadow: 0 6px 20px 0 rgba(48,54,77,0.07);
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: background-color 200ms linear;
+  }
+  .navbar-nav .active>.nav-link{
+    color: #2c98f0 !important;
+  }
+  .nav-button .nav-link{
+    border-radius: 2px;
+    background-color:#2c98f0 ;
+    color: #fff !important;
+    border:none;
+    font-size: .8rem;
+  }
+  .sign-out{
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: 500;
+    cursor: pointer;
+  }

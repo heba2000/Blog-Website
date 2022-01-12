@@ -1,0 +1,58 @@
+<section class="home d-flex justify-content-center" id="home">   
+    <div class="layer d-flex justify-content-center align-items-center">
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-10 text-center mx-auto "> 
+                        <h1 class="mt-4 mb-3"> New Posts</h1>
+                        <div class="button-home d-flex align-items-center justify-content-center pt-3"> 
+                          <button class="btn btn-primary btn-sm px-4 py-2" routerLink='/addPost'><i class="fas fa-plus fa-sm me-3"></i>NEW POST </button>
+                        </div> 
+                    </div>
+                </div>  
+             </div>
+        
+    </div>
+</section>
+<section class="posts-header py-5">
+    <div class="container">
+      <div class="row mx-auto">
+        <div class="col-md-9 mx-auto d-flex justify-content-between">
+          <div> 
+              <h1 class="bold-heading"> Your Feed</h1>
+              <p> New updated posts</p>
+              <p *ngIf="searchRetrievedPosts != 0" class="text-muted"> {{searchRetrievedPosts}} Posts found</p> 
+          </div> 
+          <div class="d-flex align-items-center">
+              <input type="text" class="form-control search-input" #searchInput placeholder="Search">
+              <button class="btn search-icon py-2 px-1 m-2" (click)="searchPosts(searchInput.value)">  <i class="fa fa-search btn fa-sm text-white"></i></button>
+          </div>  
+        </div>
+
+        
+        <div class="col-md-9 mx-auto pt-5" *ngFor="let post of posts"> 
+          <div class="row mx-auto">
+            <div class="col-md-4 text-left post-item">
+              <a class="post-img" routerLink='/home/postDetails/{{post._id}}'><img src="{{env.apiUrl}}/{{post.image}}"  alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-8">
+              <div class="post-content py-1">
+                <a class="date-span" routerLink='/home/authorProfile/{{post.user._id}}'> {{post.user.userName}}</a> 
+                <span class="date-span">  | {{ post.createdAt | date : 'dd-MM-YYYY hh:mm a' }} </span>
+                <h3 class="bold-heading py-1"> {{post.title}}</h3>
+                <p class="text-muted"> {{post.postBody | maxLength : 120 }}...</p>
+                <span class="tag text-muted p-1 me-2" *ngFor="let postTag of post.tags;let currentIndex=index"> #{{postTag}}</span> 
+              </div>
+            </div>  
+          </div>
+        </div>
+        
+  
+        <div class="col-md-9 mx-auto pt-5 ">
+          <div class="button d-flex justify-content-end">
+              <button class="btn btn-primary py-2 px-4" (click)="getOlderPosts()" > OLDER POSTS <span> <i class="fas fa-arrow-right fa-sm mx-2"></i></span> </button>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>                                                                                               
+

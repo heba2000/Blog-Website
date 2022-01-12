@@ -1,0 +1,27 @@
+
+<section class="post d-flex justify-content-center" [style.background-image]="'url('+imgSplit+')'">  
+  <div class="layer d-flex justify-content-center align-items-center">
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-6 text-left mx-auto"> 
+                        <h1 class="mt-4 mb-3"> {{post.title | uppercase}} </h1>
+                        <span class="date"> {{post.user.userName}} </span>  <span class="date">| on {{post.createdAt | date: 'dd-MM-YYYY hh:mm'}} </span>
+                    </div>
+                </div>  
+             </div>
+        
+    </div>
+</section>
+
+<section class="post-body py-5">
+  <div class="container"> 
+    <div class="row">
+      <div class="col-md-9 text-left mx-auto"> 
+        <span class="tag text-muted p-1 me-2" *ngFor="let postTag of post.tags;let currentIndex=index"># {{postTag}}</span> 
+        <h3 class="bold-heading py-2"> {{post.title}} </h3>
+        <p class=""> {{post.postBody}}</p>   
+      </div>
+    </div>
+  </div>
+
+</section>
